@@ -99,7 +99,7 @@ fi
 docker_command="docker run -it "
 if isOSWindows
 then
-    docker_command+="-v //var/run/docker.sock:/var/run/docker.sock -e "
+    docker_command+="-v \\\\.\\pipe\\docker_engine:\\\\.\\pipe\\docker_engine -e "
 else
     docker_command+="-v /var/run/docker.sock:/var/run/docker.sock -e "
 fi
